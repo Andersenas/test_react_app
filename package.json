@@ -1,0 +1,11 @@
+{
+  "name": "test_react_app",
+  "private": true,
+  "dependencies": {
+    "@rails/webpacker": "4.2.2",
+    "react_ujs": "^2.6.1"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^3.11.0"
+  }
+}
