@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import axios from 'axios'
 import {Link} from "react-router-dom";
+import Streams from "./streams";
 
 const csrfToken = document.querySelector('[name="csrf-token"]').content;
 axios.defaults.headers.common['X-CSRF-TOKEN'] = csrfToken;
@@ -33,11 +34,9 @@ class Youtube extends Component {
 						<button className="btn btn-primary" type="button">
 							<Link to="/twitch" className="btn"> Go to Twitch </Link>
 						</button>
-						{/*{this.state.streams.map(*/}
-						{/*	(stream, key) =>*/}
-
-						{/*		)*/}
-						{/*)}*/}
+						{this.state.streams && this.state.streams.length ? (
+							<Streams streams={this.state.streams}/>
+						) : null}
 
 					</div>
 				</div>
