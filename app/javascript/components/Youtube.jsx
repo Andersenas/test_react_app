@@ -11,19 +11,25 @@ class Youtube extends Component {
 		super();
 		this.state = {
 			streams: [
-				{id: 1, name: 'Lofi hip hop radio', url: 'https://www.youtube.com/watch?v=5qap5aO4i9A', type: 2, show: true},
-				{id: 2, name: 'Good Life Radio', url: 'https://www.youtube.com/watch?v=36YnV9STBqc', type: 2, show: true},
-				{id: 3, name: 'Deep House Radio', url: 'https://www.youtube.com/watch?v=wKOEl_vwPSo', type: 2, show: true}
+				{id: 1, name: 'Lofi hip hop radio', url: 'https://www.youtube.com/watch?v=5qap5aO4i9A', type_platform: 'youtube', show: true},
+				{id: 2, name: 'Good Life Radio', url: 'https://www.youtube.com/watch?v=36YnV9STBqc', type_platform: 'youtube', show: true},
+				{id: 3, name: 'Deep House Radio', url: 'https://www.youtube.com/watch?v=wKOEl_vwPSo', type_platform: 'youtube', show: true}
 			]
 		}
 	}
 
-	handleSubmit(e){
-		let message = e.target.elements[0].value
-		axios.post('/contact', {message})
-		.then( (data)=> {
-			debugger
-		})
+	componentDidMount() {
+		this.getData();
+	}
+
+	getData(){
+		axios.get('/youtube_streams')
+			.then( data => {
+				this.setState({ streams: data.data.data });
+			})
+			.catch( data => {
+				console.log(data)
+			})
 	}
 
 	render(){
