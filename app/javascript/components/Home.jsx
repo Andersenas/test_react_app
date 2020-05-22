@@ -9,10 +9,10 @@ class Home extends Component {
                 <div className="row">
                     <div className="col-md-8 offset-md-2">
                         <button className="btn btn-primary" type="button">
-                            <Link to="/twitch" className="btn"> Go to Twitch </Link>
+                            <Link to="/twitch" className="btn"> Go to Twitch Streams</Link>
                         </button>
                         <button className="btn btn-primary" type="button">
-                            <Link to="/youtube" className="btn"> Go to YouTube </Link>
+                            <Link to="/youtube" className="btn"> Go to YouTube Streams</Link>
                         </button>
                     </div>
                 </div>

@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body style=" margin-left: 100px; margin-top: 100px;">
+<h1>Listing Streams</h1>
+<p style="margin: 10px">
+    <button><%= link_to "New stream", new_admin_stream_path %></button>
+</p>
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>URL</th>
+    <th>Type platform</th>
+    <th>Show</th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @streams.each do |stream| %>
+    <tr>
+      <td><%= stream.name %></td>
+      <td><%= stream.url %></td>
+      <td><%= stream.type_platform %></td>
+      <td><%= stream.show %></td>
+      <td><button><%= link_to "Show", admin_stream_path(stream) %></button></td>
+      <td><button><%= link_to "Edit", edit_admin_stream_path(stream) %></button></td>
+      <td><button><%= link_to "Delete", "/admin/streams/" + stream.id.to_s, method: :delete, data: { confirm: "Are you sure?" } %></button></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+</body>
+</html>

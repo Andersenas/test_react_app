@@ -1,0 +1,32 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+<body style=" margin-left: 100px; margin-top: 100px;">
+<h1>Show Stream</h1>
+<%= form_tag "/admin/streams/", :method => 'POST' do %>
+
+<p>
+  <strong style="margin-right: 80px;">Name</strong>
+  <%= text_field_tag :name, params[:name] %>
+</p>
+<p>
+  <strong style="margin-right: 85px;">URL</strong>
+  <%= text_field_tag :url, params[:url] %>
+</p>
+<p>
+  <strong style="margin-right: 20px;">Type platform</strong>
+  <%= select_tag :type_platform, raw("<option value='twitch'>Twitch</option><option value='youtube'>Youtube</option>") %>
+</p>
+<p>
+  <strong  style="margin-right: 80px;">Show</strong>
+  <%= check_box_tag("show") %>
+  <%#= check_box("show", "accepted", {}, true, false) %>
+</p>
+  <%= submit_tag("Save") %>
+<% end %>
+
+<button><%= link_to "To all", admin_streams_path %></button>
+</body>
+</html>

@@ -14,10 +14,8 @@ class Streams extends PureComponent {
         toggleStream: false,
         showStream: true,
         showToggleBtn: false,
-        streams: [],
         active: '',
         prevStream: null,
-
     };
 
     componentDidMount() {
@@ -28,12 +26,10 @@ class Streams extends PureComponent {
         });
     }
 
-    // componentWillUnmount() {
-    //     this.setState({ streams: this.props.streams });
-    // }
-
     selectStream = stream => {
-        document.getElementById(`stream-${this.state.prevStream}`).classList.remove('active');
+        if(document.getElementById(`stream-${this.state.prevStream}`)){
+            document.getElementById(`stream-${this.state.prevStream}`).classList.remove('active');
+        }
         this.setState({
             active: stream.url,
             prevStream: stream.id
@@ -43,7 +39,8 @@ class Streams extends PureComponent {
     };
 
     render() {
-        const { toggleStream, showStream, streams, active } = this.state;
+        const { streams } = this.props;
+        const { toggleStream, showStream, active } = this.state;
         return (
             <StreamBody>
                 <StreamHeadContainer showStream={showStream}>
