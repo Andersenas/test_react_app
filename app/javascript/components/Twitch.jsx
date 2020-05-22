@@ -9,8 +9,8 @@ class Twitch extends Component {
 		super();
 		this.state = {
 			streams: [
-				{id: 1, name: 'Olyashaa', url: 'https://www.twitch.tv/olyashaa', type_platform: 'twitch', show: true},
-				{id: 2, name: 'Just_NS', url: 'https://www.twitch.tv/just_ns', type_platform: 'twitch', show: true},
+				// {id: 1, name: 'Olyashaa', url: 'https://www.twitch.tv/olyashaa', type_platform: 'twitch', show: true},
+				// {id: 2, name: 'Just_NS', url: 'https://www.twitch.tv/just_ns', type_platform: 'twitch', show: true},
 				// {id: 3, name: 'Ant1ka', url: 'https://www.twitch.tv/ant1ka', type_platform: 'twitch', show: true},
 				// {id: 4, name: 'CSGOMainCast_ru', url: 'https://www.twitch.tv/csgomc_ru', type_platform: 'twitch', show: true},
 				// {id: 5, name: 'Gensyxa', url: 'https://www.twitch.tv/gensyxa', type_platform: 'twitch', show: true},
@@ -22,7 +22,7 @@ class Twitch extends Component {
 	}
 
 	componentDidMount() {
-		// this.getData();
+		this.getData();
 		setInterval(() => this.getData(), 30000)
 	}
 
@@ -60,8 +60,6 @@ class Twitch extends Component {
 						{this.state.streams && this.state.streams.length ? (
 						<Streams
 							streams={this.state.streams}
-							active={this.state.active}
-							prevStream={this.state.prevStream}
 							context={this}
 						/>
 						) : null}

@@ -17,6 +17,7 @@ class Youtube extends Component {
 
 	componentDidMount() {
 		this.getData();
+		setInterval(() => this.getData(), 30000)
 	}
 
 	getData(){
@@ -44,7 +45,9 @@ class Youtube extends Component {
 						</button>
 						<h1>YouTube streams page</h1>
 						{this.state.streams && this.state.streams.length ? (
-							<Streams streams={this.state.streams}/>
+							<Streams
+								streams={this.state.streams}
+							/>
 						) : null}
 
 					</div>
