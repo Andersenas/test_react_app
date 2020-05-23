@@ -3,7 +3,6 @@ import ReactPlayer from 'react-player';
 import _ from 'lodash';
 import PropTypes from 'prop-types';
 import {
-    StreamContainer,
     StreamHeadContainer,
     AllStreams,
     StreamBody
@@ -44,10 +43,10 @@ class Streams extends PureComponent {
         return (
             <StreamBody>
                 <StreamHeadContainer showStream={showStream}>
-                    <StreamContainer id="lengthStream" ref="swipeSide" className={toggleStream ? 'ng_h100 ' : ''}>
+                    <div>
                         <AllStreams>
                             {streams.map(
-                                (stream, key) =>
+                                (stream) =>
                                     !_.isEmpty(stream) && (
                                         <a
                                             key={stream.id}
@@ -58,7 +57,7 @@ class Streams extends PureComponent {
                                     )
                             )}
                         </AllStreams>
-                    </StreamContainer>
+                    </div>
                 </StreamHeadContainer>
                 {showStream && <ReactPlayer url={active} width="calc(100% - 1px)" height={518} />}
             </StreamBody>

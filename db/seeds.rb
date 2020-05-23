@@ -14,7 +14,7 @@ streams = Stream.create([
                             {name: 'Deep House Radio', url: 'https://www.youtube.com/watch?v=wKOEl_vwPSo', type_platform: 'youtube', show: true},
                             {name: 'DreadzTV', url: 'https://www.twitch.tv/dreadztv', type_platform: 'twitch', show: true},
                             {name: 'Olyashaa', url: 'https://www.twitch.tv/olyashaa', type_platform: 'twitch', show: true},
-                            {name: 'CSGOMainCast_ru', url: 'https://www.twitch.tv/ceh9', type_platform: 'twitch', show: true},
+                            {name: 'CSGOMainCast_ru', url: 'https://www.twitch.tv/csgomc_ru', type_platform: 'twitch', show: true},
                             {name: 'Gensyxa', url: 'https://www.twitch.tv/gensyxa', type_platform: 'twitch', show: true},
                             {name: 'Ceh9', url: 'https://www.twitch.tv/ceh9', type_platform: 'twitch', show: true},
                         ])

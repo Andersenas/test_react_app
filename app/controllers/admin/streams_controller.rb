@@ -28,9 +28,7 @@ class Admin::StreamsController < AdminController
     @stream.show = params['show']
 
     if @stream.save
-      @streams = Stream.all
-      render :index
-    else
+      @stream = Stream.find(params[:id]) rescue nil
       render :edit
     end
   end
@@ -46,8 +44,8 @@ class Admin::StreamsController < AdminController
     @stream.show = params['show']
 
     if @stream.save
-      @streams = Stream.all
-      render :index
+      @stream = Stream.find(@stream.id) rescue nil
+      render :edit
     else
       render :new
     end
