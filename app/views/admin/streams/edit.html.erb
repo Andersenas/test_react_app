@@ -9,11 +9,11 @@
 <%= form_tag "/admin/streams/" + @stream.id.to_s, :method => 'PUT' do %>
   <p>
     <strong style="margin-right: 80px;">Name</strong>
-    <%= text_field_tag :name, @stream.name %>
+    <%= text_field_tag :name , @stream.name,:required => true %>
   </p>
   <p>
     <strong style="margin-right: 85px;">URL</strong>
-    <%= text_field_tag :url,  @stream.url %>
+    <%= text_field_tag :url,  @stream.url,:required => true %>
   </p>
   <p>
     <strong style="margin-right: 20px;">Type platform</strong>
