@@ -2,7 +2,7 @@
 class Admin::StreamsController < AdminController
 
   def index
-    @streams = nil
+    @streams = Stream.all
   end
 
 #
