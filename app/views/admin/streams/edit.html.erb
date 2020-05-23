@@ -4,6 +4,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 <body style=" margin-left: 100px; margin-top: 100px;">
+<% if @stream -%>
 <h1>Edit Stream</h1>
 <%= form_tag "/admin/streams/" + @stream.id.to_s, :method => 'PUT' do %>
   <p>
@@ -26,5 +27,9 @@
   <%= submit_tag("Save") %>
 <% end %>
 <button><%= link_to "To all", admin_streams_path %></button>
+<% else -%>
+  <h1>Stream not found.</h1>
+  <button><%= link_to "Go To All", admin_streams_path %></button>
+<% end %>
 </body>
 </html>

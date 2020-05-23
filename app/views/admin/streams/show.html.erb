@@ -4,6 +4,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 <body style=" margin-left: 100px; margin-top: 100px;">
+<% if @stream -%>
 <h1>Show Stream</h1>
 <p>
   <strong>Name</strong>
@@ -15,17 +16,21 @@
 </p>
 <p>
   <strong>Type platform</strong>
-  <strong><%= @stream.type_platform %></strong>
+  <span><%= @stream.type_platform %></span>
 </p>
 <p>
   <strong>Show</strong>
-  <span style=""><%= @stream.show %></span>
+  <span style=""><%= @stream.show ? 'true' : 'false' %></span>
 </p>
 <p>
   <button><%= link_to "Edit", edit_admin_stream_path(@stream) %></button>
 </p>
 
 <button><%= link_to "To all", admin_streams_path %></button>
+<% else -%>
+  <h1>Stream not found.</h1>
+  <button><%= link_to "Go To All", admin_streams_path %></button>
+<% end -%>
 
 </body>
 </html>

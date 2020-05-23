@@ -9,6 +9,7 @@
     <button><%= link_to "New stream", new_admin_stream_path %></button>
 </p>
 <table>
+  <% if @streams -%>
   <thead>
   <tr>
     <th>Name</th>
@@ -17,20 +18,20 @@
     <th>Show</th>
   </tr>
   </thead>
-
   <tbody>
   <% @streams.each do |stream| %>
     <tr>
       <td><%= stream.name %></td>
       <td><%= stream.url %></td>
       <td><%= stream.type_platform %></td>
-      <td><%= stream.show %></td>
+      <td><%= stream.show ? 'true' : 'false' %></td>
       <td><button><%= link_to "Show", admin_stream_path(stream) %></button></td>
       <td><button><%= link_to "Edit", edit_admin_stream_path(stream) %></button></td>
       <td><button><%= link_to "Delete", "/admin/streams/" + stream.id.to_s, method: :delete, data: { confirm: "Are you sure?" } %></button></td>
     </tr>
   <% end %>
   </tbody>
+  <% end -%>
 </table>
 </body>
 </html>

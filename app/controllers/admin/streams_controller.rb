@@ -2,19 +2,28 @@
 class Admin::StreamsController < AdminController
 
   def index
-    @streams = Stream.all
+    @streams = nil
   end
 
+#
+
   def show
-    @stream = Stream.find(params[:id])
+    @stream = Stream.find(params[:id]) rescue nil
   end
 
   def edit
-    @stream = Stream.find(params[:id])
+    @stream = Stream.find(params[:id]) rescue nil
   end
 
   def update
-    @stream = Stream.find(params[:id])
+
+    begin
+      @stream = Stream.find(params[:id])
+    rescue ActiveRecord::RecordNotFound => e
+      @streams = Stream.all
+      render :index
+    end
+
     @stream.name = params['name']
     @stream.url = params['url']
     @stream.type_platform = params['type_platform']
