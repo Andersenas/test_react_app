@@ -7,10 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 streams = Stream.create([
-                          { name: 'Lofi hip hop radio', url: 'https://www.youtube.com/watch?v=5qap5aO4i9A', type_platform: 'youtube', show: true },
-                          { name: 'Good Life Radio', url: 'https://www.youtube.com/watch?v=36YnV9STBqc', type_platform: 'youtube', show: true },
-                          { name: 'Deep House Radio', url: 'https://www.youtube.com/watch?v=wKOEl_vwPSo', type_platform: 'youtube', show: true },
-                          { name: 'Olyashaa', url: 'https://www.twitch.tv/olyashaa', type_platform: 'twitch', show: true },
-                          { name: 'Just_NS', url: 'https://www.twitch.tv/just_ns', type_platform: 'twitch', show: true },
-                          { name: 'DreadzTV', url: 'https://www.twitch.tv/dreadztv', type_platform: 'twitch', show: true }
+                            {name: 'Olyashaa', url: 'https://www.twitch.tv/olyashaa', type_platform: 'twitch', show: true},
+                            {name: 'Lofi hip hop radio', url: 'https://www.youtube.com/watch?v=5qap5aO4i9A', type_platform: 'youtube', show: true},
+                            {name: 'Just_NS', url: 'https://www.twitch.tv/just_ns', type_platform: 'twitch', show: true},
+                            {name: 'Good Life Radio', url: 'https://www.youtube.com/watch?v=36YnV9STBqc', type_platform: 'youtube', show: true},
+                            {name: 'Deep House Radio', url: 'https://www.youtube.com/watch?v=wKOEl_vwPSo', type_platform: 'youtube', show: true},
+                            {name: 'DreadzTV', url: 'https://www.twitch.tv/dreadztv', type_platform: 'twitch', show: true},
+                            {name: 'Olyashaa', url: 'https://www.twitch.tv/olyashaa', type_platform: 'twitch', show: true},
+                            {name: 'CSGOMainCast_ru', url: 'https://www.twitch.tv/ceh9', type_platform: 'twitch', show: true},
+                            {name: 'Gensyxa', url: 'https://www.twitch.tv/gensyxa', type_platform: 'twitch', show: true},
+                            {name: 'Ceh9', url: 'https://www.twitch.tv/ceh9', type_platform: 'twitch', show: true},
                         ])

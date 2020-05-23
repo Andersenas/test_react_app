@@ -5,8 +5,6 @@ class Admin::StreamsController < AdminController
     @streams = Stream.all
   end
 
-#
-
   def show
     @stream = Stream.find(params[:id]) rescue nil
   end

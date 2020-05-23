@@ -1,5 +1,5 @@
-import React, {Component} from 'react'
-import {Link, withRouter} from "react-router-dom";
+import React, {Component, useEffect } from 'react'
+import { withRouter } from "react-router-dom";
 import axios from "axios";
 import Streams from "./streams";
 
@@ -8,6 +8,7 @@ class Twitch extends Component {
 	constructor() {
 		super();
 		this.state = {
+			interval: null,
 			streams: [
 				// {id: 1, name: 'Olyashaa', url: 'https://www.twitch.tv/olyashaa', type_platform: 'twitch', show: true},
 				// {id: 2, name: 'Just_NS', url: 'https://www.twitch.tv/just_ns', type_platform: 'twitch', show: true},
@@ -23,7 +24,11 @@ class Twitch extends Component {
 
 	componentDidMount() {
 		this.getData();
-		setInterval(() => this.getData(), 30000)
+		this.setState({ interval: setInterval(() => this.getData(), 10000) });
+	}
+
+	componentWillUnmount() {
+		clearInterval(this.state.interval);
 	}
 
 	getData(){
@@ -39,13 +44,6 @@ class Twitch extends Component {
 	handler () {
 		this.props.history.push('/youtube');
 	};
-
-	// handleChangeSelect = stream =>{
-	// 	this.setState({
-	// 		active: stream.url,
-	// 		prevStream: stream.id
-	// 	});
-	// }
 
 	render(){
 		return(

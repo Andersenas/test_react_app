@@ -7,6 +7,7 @@ class Youtube extends Component {
 	constructor() {
 		super();
 		this.state = {
+			interval: null,
 			streams: [
 				// {id: 1, name: 'Lofi hip hop radio', url: 'https://www.youtube.com/watch?v=5qap5aO4i9A', type_platform: 'youtube', show: true},
 				// {id: 2, name: 'Good Life Radio', url: 'https://www.youtube.com/watch?v=36YnV9STBqc', type_platform: 'youtube', show: true},
@@ -17,7 +18,11 @@ class Youtube extends Component {
 
 	componentDidMount() {
 		this.getData();
-		setInterval(() => this.getData(), 30000)
+		this.setState({ interval: setInterval(() => this.getData(), 10000) });
+	}
+
+	componentWillUnmount() {
+		clearInterval(this.state.interval);
 	}
 
 	getData(){
