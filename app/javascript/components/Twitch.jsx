@@ -50,9 +50,11 @@ class Twitch extends Component {
 			<div className="container" style={{padding: '40px 0'}}>
 				<div className="row">
 					<div className="col-md-8 offset-md-2">
-						<button className="btn btn-primary" type="button" onClick={() => this.handler()}>
-							{/*<Link to="/youtube" className="btn" > Go to YouTube </Link>*/}
-							Go to YouTube
+						<button className="btn btn-danger mr-3" type="button" onClick={() => this.handler()}>
+							YouTube Streams
+						</button>
+						<button className="btn btn-info" type="button" onClick={() => this.props.history.push('/')}>
+							Home
 						</button>
 						<h1>Twitch streams page</h1>
 						{this.state.streams && this.state.streams.length ? (

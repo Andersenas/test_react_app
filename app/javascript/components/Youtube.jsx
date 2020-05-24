@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import axios from 'axios'
-import {Link, withRouter} from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import Streams from "./streams";
 
 class Youtube extends Component {
@@ -44,9 +44,11 @@ class Youtube extends Component {
 			<div className="container" style={{padding: '40px 0'}}>
 				<div className="row">
 					<div className="col-md-8 offset-md-2">
-						<button className="btn btn-primary" type="button" onClick={() => this.handler()}>
-							{/*<Link to="/twitch" className="btn"> Go to Twitch </Link>*/}
-							Go to Twitch
+						<button className="btn btn-primary mr-3" type="button" onClick={() => this.handler()}>
+							Twitch Streams
+						</button>
+						<button className="btn btn-info" type="button" onClick={() => this.props.history.push('/')}>
+							Home
 						</button>
 						<h1>YouTube streams page</h1>
 						{this.state.streams && this.state.streams.length ? (

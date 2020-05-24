@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
     <Router>
-    	<Route path="/" component={App} />
+    	<App/>
     </Router>,
     document.body.appendChild(document.createElement('div')),
   )

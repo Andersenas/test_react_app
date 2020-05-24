@@ -23,6 +23,7 @@ class Streams extends PureComponent {
             active: this.props.streams[0].url,
             prevStream: this.props.streams[0].id
         });
+        document.getElementById(`stream-${this.props.streams[0].id}`).classList.add('active')
     }
 
     selectStream = stream => {
